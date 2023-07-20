@@ -23,6 +23,9 @@ const addressBook = () => {
     .then(() => {
         people.forEach((person) => {
             let content = document.createElement("div")
+
+            content.classList.add("content-container")
+
             content.innerHTML = `
             <h4>${person.name.first} ${person.name.last}</h4>
             <img src="${person.picture.large}"/>
@@ -46,8 +49,8 @@ const addressBook = () => {
 const showHide = (button) => {
     console.log(button)
     let x = document.getElementById(button.id+"-person")
-    console.log(x,'this is the el clicked')
-    console.log(x.style.display,'this is the current style')
+    console.log(x,'this is the clicked')
+    console.log(x.style.display,'current style')
     if(x.style.display === "none" || !x.style.display) {
         x.style.display = "block";
     } else {
